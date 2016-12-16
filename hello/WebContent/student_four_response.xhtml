@@ -1,0 +1,31 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+  <title>Student four conformation</title>
+</h:head>
+
+<h:body>
+	The student is confirmed: #{studentFour.firstName} #{studentFour.lastName}
+	
+	<!-- will read data from managed bean..when page is processed, 
+	JSF will call student.getFirstName() -->
+	The students favourite programming language is:
+	 
+	<!-- ui:repeat -loop over a collection or array -->
+	<ul>
+		<ui:repeat var="tempLanguage" value="#{studentFour.favouriteLanguages}">
+			<li> #{tempLanguage}
+			</li>
+		
+		</ui:repeat>
+	
+	
+	</ul>
+</h:body>
+
+</html>

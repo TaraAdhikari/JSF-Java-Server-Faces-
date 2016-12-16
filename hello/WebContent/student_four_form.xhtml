@@ -1,0 +1,36 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Student three Registration Form</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		First Name: <h:inputText value="#{studentFour.firstName}" />
+		<!-- in case of form in JSF, JSF will studentThree.setFirstName() -->
+		<br></br>
+		<br></br>
+		Last Name: <h:inputText value="#{studentFour.lastName}" />
+		<!-- in case of form in JSF, JSF will studentThree.setLastName() -->
+		<br></br>
+		Favourite Programming Languages:
+		<h:selectManyCheckBox value="#{studentFour.favouriteLanguages}">
+			<f:selectItem itemValue="Java" itemLabel="Java" />
+			<f:selectItem itemValue="C#" itemLabel="C#" />
+			<f:selectItem itemValue="PHP" itemLabel="PHP" />
+			<f:selectItem itemValue="Ruby" itemLabel="Ruby" />
+				
+		</h:selectManyCheckBox>
+		<br></br>
+		<h:commandButton value="Submit" action="student_four_response" />
+		
+
+	</h:form>
+</h:body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Student Registration Form</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		First Name: <h:inputText value="#{studentTwo.firstName}" />
+		<!-- in case of form in JSF, JSF will student.setFirstName() -->
+		<br></br>
+		<br></br>
+		Last Name: <h:inputText value="#{studentTwo.lastName}" />
+		<!-- in case of form in JSF, JSF will student.setLastName() -->
+		<br></br>
+		<br></br>
+		Country:
+		<!-- this is next style to give country options directly to the list of string in managed beans -->
+		<h:selectOneMenu value="#{studentTwo.country}">
+			<f:selectItems value="#{studentTwo.countryOptions}" />
+			<!-- here when the form is loaded JSF will call student.getCountryOptions() -->
+		</h:selectOneMenu>
+		<!-- 
+		<h:selectOneMenu value="#{studentTwo.country}">
+			<f:selectItem itemValue="Brazil" itemLabel="Brazil"/>
+			<f:selectItem itemValue="France" itemLabel="France"/>
+			<f:selectItem itemValue="Germany" itemLabel="Germany"/>
+			<f:selectItem itemValue="India" itemLabel="India"/>
+			<f:selectItem itemValue="Turkey" itemLabel="Turkey"/>
+			<f:selectItem itemValue="United Kingdom" itemLabel="United Kingdom"/>
+			<f:selectItem itemValue="United States" itemLabel="United States"/>
+			
+		here on submitt, call:studentTwo.setCountry(...) also here 
+			itemValue means Code that is used behind the scenes
+			and itemLabel means that which is displayed to the user 	
+		</h:selectOneMenu> -->
+		<br></br>
+		<h:commandButton value="Submit" action="student_two_response" />
+		<!-- JSF will send to page student_response.xhtml ... 
+		we dont have to give explicit extension like .xhtml in action-->
+
+	</h:form>
+</h:body>
+
+</html>
